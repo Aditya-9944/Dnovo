@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De' Novo</title>
+    <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+    <!--Header-->
+    <header id="header">
+        <a href="/" class="logo"><img src="images/dnlogo2.png" alt=""></a>
+        <ul class="nav">
+        <li><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+        </ul>
+        <ul class="util">
+            <li><a href="#"><ion-icon name="search-outline"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="person-outline"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="heart-outline"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="bag-handle-outline"></ion-icon></a></li>
+            <span class="number"></span>
+        </ul>
+    </header>
+    <!--Hero banner-->
+    <div id="banner" class="banner">
+        <div class="women">
+            <img src="mock/Chụp Ảnh Lookbook _ Chụp Ảnh Thời Trang _ Lookbook Photography _ Fashion Photography _ TRÒN.jpeg" alt="women">
+            <a href="#" class="switch-btn" onclick="switchBanner('women');">Women</a>
+            <div class="content">
+                <h1> Ladies Fashion</h1>
+                <p>“You only live once, but if you do it right, once is enough.”</p>
+                <a href="#">Shop around <ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+        </div>
+        <div class="men">
+            <img src="mock/male photo idea.jpeg" alt="men">
+            <a href="#" class="switch-btn" onclick="switchBanner('men');">Men</a>
+            <div class="content">
+                <h1> Men with Taste</h1>
+                <p>“You only live once, but if you do it right, once is enough.”</p>
+                <a href="#">Shop around <ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+        </div>
+        <div class="special">
+            <img src="mock/_ (6).jpeg" alt="special">
+            <a href="#" class="switch-btn" onclick="switchBanner('special');">Special</a>
+            <div class="content">
+                <h1>Wannabe cool</h1>
+                <p>“You only live once, but if you do it right, once is enough.”</p>
+                <a href="#">Shop around <ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+        </div>
+        <a href="#" class="reset" onclick="resetBanner()"><ion-icon name="power-outline"></ion-icon></a>
+    </div>
+    <!--Main section-->
+    <main>
+        <section class="call-up">
+            <div class="call-up-box">
+                <ion-icon name="send-outline"></ion-icon>
+                <div>
+                <h4>Free Shipping</h4>
+                <p>
+                    “You only live once, but if you do it right, once is enough.”
+                </p>
+            </div>
+            </div>
+            <div class="call-up-box">
+                <ion-icon name="send-outline"></ion-icon>
+                <div>
+                <h4>Secure Payment</h4>
+                <p>
+                    “You only live once, but if you do it right, once is enough.”
+                </p>
+            </div>
+            </div>
+            <div class="call-up-box">
+                <ion-icon name="cash-outline"></ion-icon>
+                <div>
+                <h4>14 Days Return</h4>
+                <p>
+                    “You only live once, but if you do it right, once is enough.”
+                </p>
+            </div>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <div class="left">
+                <div class="promotion about-box">
+                    <img src="" alt="">
+                    <div class="description">
+                        <h4>Promotion+Discount</h4>
+                        <p>
+                            write whatever
+                        </p>
+                        <a href="#">Shop now <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                    </div>
+                </div>
+                <div class="style about-box">
+                    <img src="" alt=""> 
+                    <div class="description">
+                        <h4>Trending style</h4>
+                        <p>
+                            write whatever
+                        </p>
+                        <a href="#">Shop now <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                    </div>   
+                </div>
+                <div class="right">
+                    <div class="collection about-box">
+                        <img src="" alt="">
+                        <div class="description">
+                            <h4>Winter Collection</h4>
+                            <p>
+                                write whatever
+                            </p>
+                            <a href="#">Shop now <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                        </div>
+                    </div>
+                    <div class="discovery about-box">
+                        <img src="" alt="">
+                        <div class="description">
+                            <h4>Fashion Discovery</h4>
+                            <p>
+                                write whatever
+                            </p>
+                            <a href="#">Shop now <ion-icon name="arrow-forward-outline"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>

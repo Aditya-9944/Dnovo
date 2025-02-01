@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap');
+
+/*General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary: #ff0051;
+    --second: #3a3a3a;
+    --third: #F2F2F2;
+}
+
+body {
+    background: #000000;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+
+/* Header Section */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    background: transparent;
+    transition: 0.5s;
+    z-index: 1100;
+}
+header.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+    font-size: 30px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav, .util {
+    display: flex;
+    align-items: center;
+}
+
+.nav li, .util li {
+    list-style: none;
+    margin: 0 10px;
+}
+
+.nav li a, .util li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: 0.5s;
+    font-size: 1.6em;
+}
+
+.nav li a:hover, .util li a:hover {
+    color: var(--primary);
+}
+
+.util li .number {
+    position: absolute;
+    right: -1px;
+    bottom: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.6em;
+}
+
+/* Banner Section */
+#banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Make the Shade for the imaages */
+.women::before,
+.men::before,
+.special::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 100;
+    transition: 0.5s;  
+}
+
+/* Remove the Shade on hover */
+.women:hover::before,
+.men:hover::before,
+.special:hover::before {
+    background: transparent;
+}
+
+.women, .men, .special {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 40%;
+    transition: 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Women Section */
+.women {
+    left: 0;
+    background: var(--primary);
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+/* Men Section */
+.men {
+    left: 30%;
+    background: var(--second);
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0% 100%, 25% 50%, 0 0);
+}
+
+/* Special Section */
+.special {
+    left: 60%;
+    background: var(--primary);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+/* Active State for Left (Women) */
+#banner.left .women {
+    left: 0;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#banner.left .men,
+#banner.left .special {
+    left: 100%; /* Push men and special out of view */
+}
+
+/* Active State for Middle (Men) */
+#banner.middle .men {
+    left: 0;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+#banner.middle .women {
+    left: -100%; /* Push women out of view */
+}
+
+#banner.middle .special {
+    left: 100%; /* Push special out of view */
+}
+
+/* Active State for Right (Special) */
+#banner.right .special {
+    left: 0;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    position: absolute;
+}
+
+#banner.right .women,
+#banner.right .men {
+    left: -100%; /* Push women and men out of view */
+}
+/* Banner Images */
+.women img,
+.men img,
+.special img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.5s;
+}
+
+#banner.left .women img{
+    width: 50%;
+}
+
+#banner.middle .men img,
+#banner.right .special img{
+    left: 50%;
+    width: 50%;
+}
+
+/* Banner Switch Button */
+.switch-btn {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 5em;
+    font-weight: 300;
+    margin-top: 40%;
+    z-index: 1000;
+    transition: 0.5s;
+    transform: scale(1);
+} 
+
+.switch-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Banner Reset Button */
+.reset {
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+    z-index: 1000;
+    transition: 0.5s;
+}
+
+.reset.active {
+    transform: rotateZ(180deg);
+}
+
+.reset ion-icon {
+    color: #ffffff;
+    font-size: 3em;
+    transition: 0.3s;
+}
+
+.reset ion-icon:hover {
+    color: var(--primary);
+}
+
+/* Banner Content */
+#banner .content {
+    position: absolute;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 900;
+}
+
+#banner .content h1{
+    color: #ffffff;
+    font-size: 4.5em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#banner .content p{
+    color: #ffffff;
+    font-weight: 200;
+    font-size: 1em;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#banner .content a {
+    position: relative;
+    width: 200px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: 1px solid #ffffff;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#banner .content a ion-icon {
+    font-size: 1.2em;
+}
+
+#banner .content a:hover {
+    background: #ffffff;
+    color: var(--primary);
+}
+
+/* Corrected selector and visibility typo */
+#banner.left .women .content,
+#banner.middle .men .content,
+#banner.right .special .content {
+    opacity: 1;
+    visibility: visible; /* Fixed 'vivible' typo */
+}
+
+/* Corrected selector for #banner.right .special */
+#banner.right .special {
+    left: 0; /* Ensure this matches your design intent */
+}
+
+/* Removed typo in #banner.right ,special */
+#banner.right .special {
+    left: -120%; /* Correctly applies the transition */
+}
+
+
+/* Main Section */
+main {
+    width: 100%;
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+/* Call Up Section */
+section.call-up {
+    width: 100%;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.call-up-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.12);
+    background: #ffffff;
+}
+
+.call-up-box ion-icon {
+    font-size: 5em;
+    color: var(--primary);
+}
+
+.call-up-box h4 {
+    font-size: 1.3em;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.call-up-box p {
+    font-weight: 300;
+}
+
+/* About Section */
+.about {
+    padding: 100px 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.about .left,
+.about .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.promotion,
+.discovery {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    padding: 50px;
+}
+
+
+.style,
+.collection {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    padding: 50px;
+}
