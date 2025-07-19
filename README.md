@@ -8,7 +8,7 @@ A fully responsive and stylish website for an upcoming streetwear clothing brand
 
 ---
 ## links:
-live: https://aditya-9944.github.io/Dnovo/
+live: https://aditya-9944.github.io/DENovo/-this is a link from a diffrent repo because it was designed better there.
 Wix live: https://adimft30.wixstudio.com/my-site-4
 
 ## 🛠 Tech Stack
